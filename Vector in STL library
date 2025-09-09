@@ -1,0 +1,61 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include<vector>
+#include<algorithm>
+using namespace std; 
+int main() {
+ vector<int> a;// create an empty vector a;
+ 
+ // how to add element in vector???@@@@@@@@@@@@@@@@@
+ 
+ a.push_back(10);//push_back(value) : Inserts element at the end of the vector efficiently.
+ 
+ a.insert(a.begin() + 1, 900); // at a specific position
+ 
+ //how to access element in  vector????@@@@@@@@@@@@@
+// A. by for loop
+ for (int i = 0; i < a.size(); i++)
+        cout << a[i] << " ";
+ 
+
+//B. direct element like array with it indice
+cout<<a[1]<<"\n";
+
+// c. by using at we can also do this 
+cout<<a.at(1)<<"\n";
+
+// Update elements ##############################
+a[0]=100;
+cout<<a[0]<<"\n";
+
+// for size use size() function
+cout<<a.size()<<"\n";
+
+// delete and element 
+a.pop_back();
+for (int i = 0; i < a.size(); i++)
+        cout << a[i] << " ";
+        
+        a.erase(find(a.begin(), a.end(), 100));
+        
+        // Check if the vector is empty
+    if(a.empty()){
+        cout<<"Vector is empty."<<endl;
+}
+
+a.push_back(10);
+a.push_back(20);
+a.push_back(30);
+a.push_back(40);
+// front and end element
+
+cout<<"front element of this vector is\n "<<a.front()<<"\n";
+cout<<" end element of this vector is "<<a.back();
+
+//Iterators ke through traversal 
+for(auto it = a.begin(); it != a.end(); it++) {
+    cout << *it << " ";
+}
+
+return 0;
+}
