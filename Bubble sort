@@ -5,7 +5,6 @@ int main() {
     int n;
     cout << "Enter size of array: ";
     cin >> n;
-
     int arr[n];  // dynamic array (stack me allocate hoga)
 
     cout << "Enter " << n << " elements:\n";
