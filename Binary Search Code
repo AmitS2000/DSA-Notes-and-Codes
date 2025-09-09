@@ -1,0 +1,45 @@
+// Online C++ compiler to run C++ program online
+#include <iostream>
+#include <algorithm>
+using namespace std;
+
+int main() {
+    // Writing a binary search program
+    int size, key, low, mid, high;
+
+    cout << "Enter the size of the array: ";
+    cin >> size;
+
+    int arr[size];
+    cout << "Enter the elements of the array:\n";
+    for (int i = 0; i < size; i++)
+        cin >> arr[i];
+
+    sort(arr, arr + size); // Sorting the array in ascending order
+
+    cout << "\nThe sorted array is:\n";
+    for (int i = 0; i < size; i++)
+        cout << arr[i] << " ";
+    
+    cout << "\n\nEnter the element you want to search: ";
+    cin >> key;
+
+    low = 0;
+    high = size - 1;
+
+    while (low <= high) {
+        mid = (low + high) / 2;
+
+        if (arr[mid] == key) {
+            break;
+        } else if (key > arr[mid]) {
+            low = mid + 1;
+        } else {
+            high = mid - 1;
+        }
+    }
+
+    cout << "\nYour element is found at position: " << mid + 1 << endl;
+
+    return 0;
+}
